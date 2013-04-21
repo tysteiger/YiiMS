@@ -8,6 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'YiiMS',
+        'defaultController'=>'post',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -20,14 +21,14 @@ return array(
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		/*
+		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'Rookie123',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		*/
+		
 	),
 
 	// application components
@@ -36,6 +37,8 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
+            
+                
 		// uncomment the following to enable URLs in path-format
 		
 		'urlManager'=>array(
@@ -52,12 +55,16 @@ return array(
 		),*/
 		// uncomment the following to use a MySQL database
 		
+                'cache'=>array(
+                'class'=>'CDbCache',
+                ),
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
+			'connectionString' => 'mysql:host=localhost;dbname=yiims',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => 'toor',
 			'charset' => 'utf8',
+                        'schemaCachingDuration'=>3600,
 		),
 		
 		'errorHandler'=>array(
@@ -86,5 +93,7 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'tylertheliger@gmail.com',
+                'tagCloudCount'=>20,
+                
 	),
 );
